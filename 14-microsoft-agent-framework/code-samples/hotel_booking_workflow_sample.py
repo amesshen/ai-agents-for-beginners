@@ -198,7 +198,7 @@ async def main() -> None:
     elif github_token:
         # GitHub Models
         chat_client = OpenAIChatClient(
-            base_url=os.environ.get("GITHUB_ENDPOINT"),
+            base_url=os.environ.get("GITHUB_ENDPOINT", "https://models.inference.ai.azure.com"),
             api_key=github_token,
             model_id="gpt-4o",
         )
